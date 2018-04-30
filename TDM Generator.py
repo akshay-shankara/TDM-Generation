@@ -28,6 +28,9 @@ while i < path_length:
         # Lowercase all words (default_stopwords are lowercase too)
         words = [word.lower() for word in words]
 
+        # Remove special characters
+        words = [word.lower() for word in words.isalpha()]
+
         # Remove stopwords
         words = [word for word in words if word not in default_stopwords]
 
