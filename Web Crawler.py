@@ -37,8 +37,11 @@ for tag in tags:
             article.parse()
 
             # Write article.text to a file
-            file_directory = ('/Users/akshay/Desktop/data/file%d.txt' % i)
+            file_directory = ('output_directory/file%d.txt' % i)
             file = open(file_directory, 'w')
+            file.write("\n\n\n*** ARTICLE %d ***\n\n\n" % i)
+            file.write(article.text)
+            file.close()
             i += 1
     else:
         pass
@@ -46,7 +49,8 @@ for tag in tags:
 article = newspaper.Article(url=link2)
 article.download()
 article.parse()
-file_directory = ('/Users/akshay/Desktop/data/file%d.txt' % i)
+
+file_directory = ('output_directory/file%d.txt' % i)
 file = open(file_directory, 'w')
 file.write("\n\n\n*** ARTICLE %d ***\n\n\n" % i)
 file.write(article.text)
